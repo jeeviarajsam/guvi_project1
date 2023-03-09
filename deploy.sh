@@ -3,8 +3,8 @@
 ls -l
 mkdir react_app && mv -f * react_app
 tar -cvzf react_app.tar.gz react_app
-scp -o StrictHostKeyChecking=no -i $key react_app.tar.gz ubuntu@3.112.2.162:/home/ubuntu
-ssh -T -o StrictHostKeyChecking=no -i $key ubuntu@3.112.2.162<<EOF
+scp -o StrictHostKeyChecking=no -i $key react_app.tar.gz ubuntu@43.207.231.100:/home/ubuntu
+ssh -T -o StrictHostKeyChecking=no -i $key ubuntu@43.207.231.100<<EOF
 cd /home/ubuntu
 rm -rf react_app || true
 sudo docker system prune -y

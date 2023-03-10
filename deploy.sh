@@ -1,8 +1,7 @@
 #!/bin/bash
 #deploy the application
 ls -l
-mkdir .react_app && mv -f * .react_app
-mv .reactapp reactapp
+mkdir reactapp && cp -rf public src Dockerfile build.sh deploy.sh docker-compose.yml package-lock.json package.json reactapp 
 tar -cvzf react_app.tar.gz react_app
 scp -o StrictHostKeyChecking=no -i $key react_app.tar.gz ubuntu@43.207.231.100:/home/ubuntu
 ssh -T -o StrictHostKeyChecking=no -i $key ubuntu@43.207.231.100<<EOF

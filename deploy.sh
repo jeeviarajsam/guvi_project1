@@ -29,6 +29,7 @@ docker login --username=$docker_username --password=$docker_password
 echo $docker_password | docker login -u $docker_username --password-stdin
 docker image tag reactapp:v1 jeeviarajsam/reactapp_production:v1
 docker image push jeeviarajsam/reactapp_production:v1
+docker-compose up -d
 else
 echo "error data"
 fi

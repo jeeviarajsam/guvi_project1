@@ -7,7 +7,7 @@ scp -o StrictHostKeyChecking=no -i $key react_app.tar.gz ubuntu@43.207.231.100:/
 ssh -T -o StrictHostKeyChecking=no -i $key ubuntu@43.207.231.100<<EOF
 cd /home/ubuntu
 irm -rf react_app || true
-sudo docker system prune -fa
+sudo docker system prune -a
 tar -xvzf react_app.tar.gz 
 #deploy based on git hub branch commit
 if [[ $GIT_BRANCH == origin/dev ]]

@@ -1,6 +1,6 @@
 #!/bin/bash
 #deploy the application
-ls -l
+ls -la
 mkdir react_app && cp -rf public src Dockerfile build.sh deploy.sh docker-compose.yml package-lock.json package.json react_app 
 tar -cvzf react_app.tar.gz react_app
 scp -o StrictHostKeyChecking=no -i $key react_app.tar.gz ubuntu@43.207.231.100:/home/ubuntu

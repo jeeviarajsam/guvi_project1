@@ -6,7 +6,7 @@ tar -cvzf react_app.tar.gz react_app
 scp -o StrictHostKeyChecking=no -i $key react_app.tar.gz ubuntu@43.207.231.100:/home/ubuntu
 ssh -T -o StrictHostKeyChecking=no -i $key ubuntu@43.207.231.100<<EOF
 cd /home/ubuntu
-irm -rf react_app || true
+rm -rf react_app || true
 sudo docker system prune -f
 tar -xvzf react_app.tar.gz 
 #deploy based on git hub branch commit
@@ -26,7 +26,7 @@ cd react_app
 chmod +x build.sh
 ./build.sh
 docker login --username=$docker_username --password=$docker_password
-echo $docker_password | docker login -u $docker_username --password-stdin
+echo $docker_password | docker login -u $docker_username i--password-stdin
 docker image tag reactapp:v1 jeeviarajsam/reactapp_production:v1
 docker image push jeeviarajsam/reactapp_production:v1
 #docker-compose up -d

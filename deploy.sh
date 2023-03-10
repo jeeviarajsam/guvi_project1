@@ -1,7 +1,8 @@
 #!/bin/bash
 #deploy the application
 ls -l
-mkdir react_app && mv -f * react_app
+mkdir .react_app && mv -f * .react_app
+mv .reactapp reactapp
 tar -cvzf react_app.tar.gz react_app
 scp -o StrictHostKeyChecking=no -i $key react_app.tar.gz ubuntu@43.207.231.100:/home/ubuntu
 ssh -T -o StrictHostKeyChecking=no -i $key ubuntu@43.207.231.100<<EOF
